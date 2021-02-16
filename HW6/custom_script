@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+while true
+do
+	mem=`free -hm` 
+	cpu_info=`echo cpi_info example` 
+	load_average=`uptime` 
+	free_disk_space=`free -hm`
+	time=`date "+%S:%M:%H %m %d %Y"`
+	echo "$time\n$cpu_info\n$load_average\n$free_disk_space\n$mem">> /var/log/custom_daemon.log
+	sleep 30
+done
